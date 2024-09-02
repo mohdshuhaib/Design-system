@@ -1,21 +1,20 @@
 import './App.css'
-import Typography from './components/atom/typography/Typography'
+import Button from './components/button/Button';
 
 function App() {
+  const handleOnClick = () => {
+    alert('good bro')
+  }
   return (<>
-    <Typography
-      tag="h1"
-      text="Shuhaib World"
-      className="title text-center"
-      style={{ fontSize: "30px", color: "grey" }}
-      role='heading'
-      ariaLabel='shuhaib world'
-      arialabelledBy='title'
+    <Button
+    type="button"
+    classes='bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded cursor-pointer'
+    disabled
+    autoFocus
+    onClick={handleOnClick}
     >
-      <span>Nice to meet you</span>
-    </Typography>
-    <Typography tag="h2" text="Code With Me" />
-    <Typography tag="p" text="The channel provide you a best knowledge" />
+      Subscribe web diary
+    </Button>
   </>
   );
 }
