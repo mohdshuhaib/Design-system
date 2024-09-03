@@ -1,19 +1,33 @@
+import { useState } from 'react';
 import './App.css'
 import Button from './components/button/Button';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false)
   const handleOnClick = () => {
-    alert('good bro')
+    setIsLoading(true)
   }
   return (<>
     <Button
+    variant='secondary'
+    variantType='filled'
     type="button"
-    classes='bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded cursor-pointer'
-    disabled
+    classes='shuhaib'
     autoFocus
     onClick={handleOnClick}
     >
       Subscribe web diary
+    </Button>
+
+    <hr className='mt-10 mb-5'/>
+    <Button
+    type='submit'
+    variant='tertiary'
+    variantType='filled'
+    onClick={handleOnClick}
+    isLoading={isLoading}
+    >
+      Make Payment
     </Button>
   </>
   );
