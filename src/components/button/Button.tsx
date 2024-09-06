@@ -1,5 +1,5 @@
 import ButtonProps from "./type"
-import classNames from "classnames"
+import getBtnClasses from "./utility"
  const Button: React.FC<ButtonProps> = ({
   variant='primary',
   variantType = 'filled',
@@ -10,11 +10,8 @@ import classNames from "classnames"
   isLoading,
   ...restProps
 }) =>{
-  const btnClasses = classNames("py-2 px-4 rounded cursor-pointer",{
-    "bg-primary text-white font-bold" : variant === "primary" && variantType === "filled",
-    "bg-secondary text-white font-bold" : variant === "secondary" && variantType === "filled",
-    "bg-tertiary text-white font-bold" : variant === "tertiary" && variantType === "filled",
-  },classes)
+  const btnClasses = getBtnClasses({variant, variantType, classes, isLoading})
+
   return (
     <button type={type} className={btnClasses} onClick={onClick} {...restProps}>
       <span className="flex items-center justify-center gap-3">{children}

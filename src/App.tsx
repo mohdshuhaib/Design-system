@@ -1,36 +1,43 @@
-import { useState } from 'react';
 import './App.css'
-import Button from './components/button/Button';
+import Typography from './components/atom/typography/Typography';
+import Media from './components/media/Media';
+import leaf from './assets/leaf.png'
+import video from './assets/video3.mp4'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false)
-  const handleOnClick = () => {
-    setIsLoading(true)
-  }
-  return (<>
-    <Button
-    variant='secondary'
-    variantType='filled'
-    type="button"
-    classes='shuhaib'
-    autoFocus
-    onClick={handleOnClick}
-    >
-      Subscribe web diary
-    </Button>
+  return (
+    <>
+      <Typography
+        tag='h1'
+        text='Shuhaib World : Media Components'
+        className='mb-8 text-[30px] font-bold text-white'
+      />
+      <hr className='mt-10 mb-5 border-tertiary' />
 
-    <hr className='mt-10 mb-5'/>
-    <Button
-    type='submit'
-    variant='tertiary'
-    variantType='filled'
-    onClick={handleOnClick}
-    isLoading={isLoading}
-    >
-      Make Payment
-    </Button>
-  </>
+      <Media
+        type='image'
+        src={leaf}
+        alt='leaf'
+        containerClasses='w-[400px] h-[400px] rounded'
+        mediaClasses='w-[400px] h-[400px] object-cover rounded'
+      />
+
+      <Typography
+        tag='h1'
+        text='Shuhaib World : video'
+        className='mb-8 text-[30px] font-bold text-white'
+      />
+
+      <Media
+        type='video'
+        src={video}
+        alt='leaf'
+        containerClasses='w-[400px] h-auto rounded'
+        mediaClasses='w-[400px] rounded object-cover'
+        autoPlay
+        muted
+      />
+    </>
   );
 }
-
 export default App

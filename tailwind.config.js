@@ -7,10 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': "#8EB8E5",
-        'secondary':"#7C99B4",
-        'tertiary':"#6B7F82"
-      }
+        'primary': "#1489d3",
+        'secondary':"#bb1623e0",
+        'tertiary':"#3f4d5c"
+      },
+      fontFamily: {
+        openSans: ['Open Sans', 'sans-serif'],
+      },
     },
   },
   plugins: [],
